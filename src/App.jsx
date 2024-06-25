@@ -1,7 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
+const tele = window.Telegram.WebApp
+var ready = false
 function App() {
+
+  useEffect(()=>{
+    if (!ready) {
+      ready = true
+    tele.ready()
+
+    tele.MainButton.text = "Hi! I'm Jasper"
+    tele.MainButton.show()
+    }
+
+
+  })
 
   const [count, setCount] = useState(0)
   const [scale, setScale] = useState(1)
@@ -32,7 +46,7 @@ const colors = ["#FFEB", "#2E7D32", "#64B5F6", "#FFAB91"]
     
     <img className='relative w-[230px] select-none draggable-none' src="src\assets\jasper.png"/>
 
-    <p onClick={clickMe} className={`bg-white p-3 text-4xl text-[#000] rounded-[10px] select-none scale-[${scale}]`}>Click Me!</p>
+    <p onClick={clickMe} className={`bg-white p-3 text-4xl text-[#000] rounded-[10px] select-none`}>Click Me!</p>
     <p className='text-5xl mt-10'>{count}</p> 
 
     </>
