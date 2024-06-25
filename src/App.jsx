@@ -44,7 +44,7 @@ const colors = ["#FFEB", "#2E7D32", "#64B5F6", "#FFAB91"]
   return (
     <>
     
-    <img className='relative w-[230px] select-none draggable-none' src="public\jasper.png"/>
+    <img className='relative w-[230px] select-none draggable-none' src="jasper.png"/>
 
     <p onClick={clickMe} className={`bg-white p-3 text-4xl text-[#000] rounded-[10px] select-none`}>Click Me!</p>
     <p className='text-5xl mt-10'>{count}</p> 
